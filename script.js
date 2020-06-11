@@ -1,5 +1,5 @@
 // Assignment Code
-var generateBtn = document.getElementById("generate");
+var generateBtn = document.querySelector("#generate");
 
 //seting up variables for differents choices of characters for password from users
 var upperEl = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -19,7 +19,7 @@ function generatePassword (){
   var specChar = confirm("Click ok to confirm SpecialCharacters:") ;
   var numChar = confirm("Click ok to confirm Numerical Characters:") ;
   } else {
-    alert("you need to chose 8 to 128 characters click (generate password) button to start over");
+    alert("you need to choose 8 to 128 characters click (generate password) button to start over");
   }
   // Saving user's answers from prompted questions
   if(upperCase){
@@ -38,13 +38,12 @@ function generatePassword (){
   
 }
 // calling the generatePassword function
-  generatePassword();
-
+  //generatePassword();
 
 // Write password to the #password input
 function writePassword() {
 let finalPassword = "";
-for (var i = 0; i < userChoices; i++){
+for (var i = 0; i < charLength; i++){
 
   let passwordEls = Object.keys(userChoices);
   let randonEls = passwordEls[Math.floor(Math.random() * passwordEls.length)];
@@ -58,15 +57,13 @@ for (var i = 0; i < userChoices; i++){
 }
 return finalPassword;
 }
+
 function getRandomCharacter(str){
   return str[Math.floor(Math.random()* str.length)];
 }
-  // var password = generatePassword();
-  // var passwordText = document.querySelector("#password");
+   var password = generatePassword();
+   var passwordText = document.querySelector("#password");
 
-  // passwordText.value = password;
+    passwordText.value = password;
 // Add event listener to generate button
-generateBtn.addEventListener("click", function () {
-  password.innerHTML = writePassword();
-
-})
+generateBtn.addEventListener("click", writePassword);

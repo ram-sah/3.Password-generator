@@ -8,8 +8,6 @@ var specialEl = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~«µ¶¿¥æ®¤¢†©ð";
 var numEl = "0123456789";
 
 //get user input 
-//var charLength;
-
 //Creating an object to save users choices
 var userChoices = {};
 var charLength = parseInt(prompt("How many characters do you want to generate select (8 to 128) ?"));

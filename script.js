@@ -7,7 +7,7 @@ var lowerEl = "abcdefghijklmnopqrstuvwxyz";
 var specialEl = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~«µ¶¿¥æ®¤¢†©ð";
 var numEl = "0123456789";
 
-//get user input 
+//get user input
 //Creating an object to save users choices
 var userChoices = {};
 var charLength = parseInt(prompt("How many characters do you want to generate select (8 to 128) ?"));
@@ -34,7 +34,7 @@ function generatePassword() {
   if (numChar) {
     userChoices["numEl"] = numEl;
   }
-  console.log(userChoices);
+  console.log(`here is user's choice ${userChoices }`);
 
 }
 // calling the generatePassword function
@@ -62,14 +62,6 @@ function getRandomCharacter(str) {
   return str[Math.floor(Math.random() * str.length)];
 }
 
-// function completeWritePassword() {
-//   generatePassword();
-//   var password = writePassword();
-//   var passwordText = document.querySelector("#password");
-
-//   passwordText.value = password;
-//   userChoices = {};
-// }
 
 // Add event listener to generate button
 button.addEventListener("click", function () {
